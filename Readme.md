@@ -28,7 +28,7 @@
 
 12. finally Laravel Mix is compliled Successfully with `1 warning in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details) webpack compiled with 1 warning`
 
-13. you can keep going or try to fix this warning  by adding this to webpack.mix.js: `mix.webpackConfig({ stats: { children: true }});`
+13. you can keep going or try to fix this warning  by adding this to webpack.mix.js: `mix.webpackConfig({ stats: { children: true }});` after That we create our database and assign it in .env file
 
 14. Run migrations `php artisan migrate`
 
@@ -56,4 +56,4 @@
 
 26. run the seed `php artisan migrate:fresh --seed`
 
-27. When I run the previous command , Error is found `Illuminate\Database\Eloquent\Factories\HasFactory not found`
+27. Database seeding completed Successfully
