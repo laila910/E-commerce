@@ -12,6 +12,7 @@
     "devDependencies": {
         "axios": "^0.21",
         "bootstrap": "^4.6.0",
+        "css-loader": "^5.2.7",
         "jquery": "^3.6",
         "laravel-mix": "^6.0.43",
         "lodash": "^4.17.19",
@@ -23,5 +24,10 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.9.7",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "autoprefixer": "10.4.5",
+        "vue-toaster": "^2.0.0",
+        "vue-toastr": "^2.1.2"
     }
 }

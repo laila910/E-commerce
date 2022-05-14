@@ -57,3 +57,23 @@
 26. run the seed `php artisan migrate:fresh --seed`
 
 27. Database seeding completed Successfully
+
+28. create ProductsController `php artisan make:controller ProductsController --resource`
+
+29. in web.php , use this controller to render product view :) 
+
+30. make Add To Cart button Vue component ,use it in product.blade.php. 
+
+31. we don't see the button because we need to compile it so you should run this command `npm run dev`
+
+32. I get this error `WARNING in ./resources/sass/app.scss (./node_modules/css-loader/dist/cjs.js??clonedRuleSet-6[0].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-6[0].rules[0].use[2]!./node_modules/resolve-url-loader/index.js??clonedRuleSet-6[0].rules[0].use[3]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-6[0].rules[0].use[4]!./resources/sass app.scss)Module Warning (from ./node_modules/postcss-loader/dist/cjs.js): Warning(3474:3) autoprefixer: Replace color-adjust to print-color-adjust. The color-adjust shorthand is currently deprecated.Child mini-css-extract-plugin C:\xampp\htdocs\E-commerce\node_modules\css-loader\dist\cjs.js??clonedRuleSet-6[0].rules[0].use[1]!C:\xampp\htdocs\E-commerce\node_modules\postcss-loader\dist\cjs.js??clonedRuleSet-6[0].rules[0].use[2]!C:\xampp\htdocs\E-commerce\node_modules\resolve-url-loader\index.js??clonedRuleSet-6[0].rules[0].use[3]!C:\xampp\htdocs\E-commerce\node_modules\sass-loader\dist\cjs.js??clonedRuleSet-6[0].rules[0].use[4]!C:\xampp\htdocs\E-commerce\resources\sass\app.scss compiled with 1 warning webpack compiled with 1 warning`
+
+33. to solve this error, Irun this command `npm install autoprefixer@10.4.5 --save-exact` and re-run `npm run dev`
+
+34. but still the button ddn't appear , because in app.js call app element , and if i search in product view, Cann't find this .
+
+35. creating layout files 
+
+36. after we pass userId and ProductId when the user click on Add To Cart button , we need to recompile `npm run dev`
+
+37. install the toaster package `npm install vue-toastr`
