@@ -2,7 +2,7 @@
 
 ## steps
 
-1. Via Composer Create-Project `composer create-project --prefer-dist laravel/laravel:^7.0 Ecommerce`
+1. Via Composer Create-Project `composer create-project --prefer-dist laravel/laravel:^8.0 Ecommerce`
 
 2. installing laravel/ui package `composer require laravel/ui:^2.4`
 
@@ -76,4 +76,18 @@
 
 36. after we pass userId and ProductId when the user click on Add To Cart button , we need to recompile `npm run dev`
 
-37. install the toaster package `npm install vue-toastr`
+37. install the toaster package to show the errors in smart way :) `npm install vue-toastr`
+
+38. Every time I change in vue file , i need to recompile `npm run dev`
+
+39. if the user is not logged in , show exception by toastr to make him login :) .
+
+40. if the user is logged in, add product to cart by cart route
+
+41. open web.php to add cart route :) 
+
+42. add CartsController `php artisan make:controller CartsController --resource`
+
+43. adding to cart processing using axios
+
+44. add product in cart backend processing :) 
