@@ -93,3 +93,8 @@
 44. add product in cart backend processing :) 
 
 45. we have problem , the products don't added to cart even if user is logged in :(
+
+46. The error was in the model, filables supposed to be fillable :)
+
+47. Now, I can add product to card table and if the product exists before the quanity will increment :) 
+

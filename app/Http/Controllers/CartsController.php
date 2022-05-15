@@ -37,9 +37,8 @@ class CartsController extends Controller
     public function store(Request $request)
     {
         //getting product details
-        $product = Product::find($request->get('product_id'))->first();
-
- 
+        $product = Product::where('id',$request->get('product_id'))->first();
+      
         // if one product already in cart or not ?,true or false 
        $productFoundInCart = Cart::where('product_id',$request->get('product_id'))->pluck('id');
 
