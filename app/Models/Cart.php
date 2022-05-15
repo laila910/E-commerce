@@ -16,4 +16,10 @@ class Cart extends Model
     'user_id',
     'created_at',
     'updated_at'];
+    /**
+     * Relationship with products.
+     */
+    public function Product(){
+        return $this->hasMany(Product::class,'id','product_id');
+    }
 }

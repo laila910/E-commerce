@@ -98,3 +98,18 @@
 
 47. Now, I can add product to card table and if the product exists before the quanity will increment :) 
 
+48. Get number of product in user Cart and pass data from controller to add to cart component response by `this.$root.$emit('changeInCar',$response.data.items)`
+
+49. we need to create new Cart vue component to display number of users' products in cart in the header with tab cart :)
+
+50. I need to register Cart.vue component in app.js
+
+51. start to transform client to the checkout page when he click on cart button in header :)
+
+52. with help of [snippets](https://bootsnipp.com/snippets/5MyR8) to fill the content html and css  of checkout page Thus I can show my products details in cart :) 
+
+53. make new vue component Checkout.vue and register this component in app.js :)
+
+54. Display cart items in checkout page 
+
+

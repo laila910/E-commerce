@@ -11,6 +11,8 @@
     
     <!--====== Title ======-->
     <title>Furnish - Furniture and Decor Website Template</title>
+    @yield('styles');
+    <!--====== Style======-->
     <script src="{{ asset('css/app.css') }}" defer></script>
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
@@ -38,7 +40,7 @@
     
     <!--====== Responsive css ======-->
     <link rel="stylesheet" href="assets/css/responsive.css">
-  
+
   
 </head>
 <body>
@@ -62,7 +64,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg">
+                    <nav class="navbar navbar-fixed-top navbar-expand-lg">
                         <a class="navbar-brand" href="index.html">
                             <img src="assets/images/logo.png" alt="Logo">
                         </a> <!-- Logo -->
@@ -98,9 +100,7 @@
                                 @if (Route::has('login'))
                                    
                                     @auth
-                                    <li class="nav-item">
-                                        <a href="{{ url('/home') }}">Cart</a>
-                                    </li>
+                                    <cart />
                                     @else
                                     <li class="nav-item">
                                         <a href="{{ route('login') }}">Login</a>
@@ -153,6 +153,12 @@
     
     <!--====== Main js ======-->
     <script src="assets/js/main.js"></script>
+@yield('scripts');
+<script>
+    window.onbeforeunload=function(){
+        window.scrollTo(0,0);
+    }
+</script>
 
 </body>
 

@@ -10,7 +10,9 @@ import axios from "axios";
 
     export default {
         data(){
-
+         return{
+             
+         }
         },
         props:['productId','userId'],
         methods:{
@@ -24,7 +26,8 @@ import axios from "axios";
             let response = await  axios.post('/cart',{
                 'product_id': this.productId
             });
-            console.log(response.data);
+            // console.log(response.data);
+            this.$root.$emit('changeInCart',response.data.items);
              }
         },
         mounted() {
