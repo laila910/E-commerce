@@ -112,4 +112,39 @@
 
 54. Display cart items in checkout page 
 
+55. Now we place order with help of [snippets](https://bootsnipp.com/snippets/ypqoW)
+
+56. add  address and payment form code in checkout component and checouk blade :) 
+
+57. use Strip package with help of [stripe](https://cartalyst.com/manual/stripe-laravel/14.x) 
+
+58. open composer.json add "cartalyst/stripe-laravel":"^13.0" to the require array 
+
+59. run `composer install` 
+
+60. I got this warning : `the lock file is not up to date with the latest changes in composer.json. you may be getting outdated dependencies. It is recommend that you run 'composer update' or ;'composer update <package name>'` so I had to run `composer update`
+
+61. open config/app.php and add `Cartalyst\Stripe\Laravel\StripeServiceProvider::class,` in the providers array and add this `'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,` in the aliases array :) 
+
+62. run `composer dump-autoload`
+
+63. go to [stripeSite](https://stripe.com/) ,first you need to sign-up .. then dashboard to developers button and API Keys :) 
+
+64. click on reveal test key and copy it :)
+
+65. Open .env file and add stripe secret 
+
+66. then with the help of [stripdoc](https://stripe.com/docs/testing) go to cartcontroller to start in the payment process :) 
+
+67.  use card number for testing `4242 4242 4242 4242`
+
+68. after succeeded payment ... for this day, stop on error of getting order details. complete tommorow and try to solve it :(
+
+
+
+
+
+
+
+
 
