@@ -259,6 +259,15 @@ export default{
                 'amount': this.items.totalAmount,
                 'order': this.items,
             });
+            if(response.data.success){
+                    this.$toastr.s(response.data.success);
+            }else{
+                this.$toastr.e(response.data.error);
+            } 
+            setTimeout(()=>{
+                window.location.href='/';
+            },500);
+           
             console.log(response.data);
 
         }else{

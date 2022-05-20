@@ -136,9 +136,18 @@
 
 66. then with the help of [stripdoc](https://stripe.com/docs/testing) go to cartcontroller to start in the payment process :) 
 
-67.  use card number for testing `4242 4242 4242 4242`
+67. use card number for testing `4242 4242 4242 4242`
 
-68. after succeeded payment ... for this day, stop on error of getting order details. complete tommorow and try to solve it :(
+68. after succeeded payment ... for this day, stop on error of payment order details on stripe dashboard . complete tommorow and try to solve it :(
+
+69. this error because I'm not activate my payment account with my details in stripe dashboard
+
+70. after make Successfull payment, we need to make processing model for details of the payment and its details :) `php artisan make:model Processing -m` and ProcessingsController `php artisan make:controller ProcessingsController --resource`
+
+71. add foreign key in processing table to connect with details of products of user in cart table `php artisan make:migration add_client_id_processings_table`
+
+72. after filling the relation data ,add `client_id` if filable in Processing mode and  run `php artisan optimize:clear`
+
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Processing;
 use Stripe;
 
 class CartsController extends Controller
@@ -193,7 +194,7 @@ class CartsController extends Controller
        dd($orders,json_encode($ordersArray));
 
        //process payment 
-       $stripe = Stripe::make(env('STRIPE_SECRET'));
+       $stripe = Stripe::make(env('STRIPE_KEY'));
        $token = $stripe->tokens()->create([
          'card'=>[
          'number'=> $cardNumber,
@@ -216,7 +217,7 @@ class CartsController extends Controller
            'email'=>$email,
            'phone'=>$phone,
            'address'=>[
-                 'Line1' =>$address,
+                 'line1' =>$address,
                  'postal_code'=>$zipCode,
                  'city'=>$city,
                  'state'=>$state,
@@ -225,13 +226,13 @@ class CartsController extends Controller
            'shipping'=>[
             'name'=>$firstName.' '.$lastName,
             'address'=>[
-              'Line1' =>$address,
+              'line1' =>$address,
               'postal_code'=>$zipCode,
               'city'=>$city,
               'state'=>$state,
               'country'=>$country,
             ],
-          ],
+          ], 
           'source' =>$token['id'],
 
 
@@ -249,9 +250,31 @@ class CartsController extends Controller
           // capture the details from stripe
           $customerIdStripe = $charge['id'];
           $amountRec =$charge['amount'];
+          $client_id=auth()->user()->id;
+          
+
+      $processingDetails = Processing::create([
+             'client_id'=>$client_id,
+             'client_name'=>$firstName.''.$lastName,
+             'client_address'=>json_encode([
+                       'line1' =>$address,
+                       'postal_code'=>$zipCode,
+                       'city'=>$city,
+                       'state'=>$state,
+                       'country'=>$country ]),
+             'order_details'=>json_encode($ordersArray),
+             'amount'=>$amount,
+             'currency'=>$charge['currency'],
+          ]);
+          if($processingDetails){
+            //clear the cart after payment successfully
+            Cart::where('user_id',$client_id)->delete();
+            return ['success'=>'order completed successfully'];
+          }
 
        }else{
-        dd($charge);
+        // dd($charge);
+        return ['error'=>'order failed contact support'];
        }
        
   

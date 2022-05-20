@@ -2505,7 +2505,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 if (!(_this2.firstName != '' && _this2.address != '' && _this2.cardNumber && _this2.cvv)) {
-                  _context2.next = 7;
+                  _context2.next = 9;
                   break;
                 }
 
@@ -2531,16 +2531,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 response = _context2.sent;
+
+                if (response.data.success) {
+                  _this2.$toastr.s(response.data.success);
+                } else {
+                  _this2.$toastr.e(response.data.error);
+                }
+
+                setTimeout(function () {
+                  window.location.href = '/';
+                }, 500);
                 console.log(response.data);
-                _context2.next = 9;
+                _context2.next = 11;
                 break;
 
-              case 7:
+              case 9:
                 _this2.$toastr.e('User Info Incomplete');
 
                 return _context2.abrupt("return");
 
-              case 9:
+              case 11:
               case "end":
                 return _context2.stop();
             }
