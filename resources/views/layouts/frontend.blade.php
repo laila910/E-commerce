@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!--====== Title ======-->
-    <title>Furnish - Furniture and Decor Website Template</title>
+    <title>Furniture and Decor Website</title>
     @yield('styles');
     <!--====== Style======-->
     <script src="{{ asset('css/app.css') }}" defer></script>
